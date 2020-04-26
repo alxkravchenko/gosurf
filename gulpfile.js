@@ -29,6 +29,7 @@ gulp.task('css', function(){
     // 'node_modules/bootstrap/dist/css/bootstrap-grid.css',
     'node_modules/owl.carousel/dist/assets/owl.carousel.css',
     'node_modules/owl.carousel/dist/assets/owl.theme.default.css',
+    'node_modules/animate.css/animate.css',
   ])
     .pipe(concat('_libs.scss'))
     .pipe(gulp.dest('app/scss'))

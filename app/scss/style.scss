@@ -3,20 +3,170 @@
 @import "fonts";
 @import "global";
 
-.header {}
+.header {
+    position: relative;
+    height: 100vh;
+
+    &__title {
+        position: absolute;
+        z-index: 6;
+        max-width: 470px;
+        top: 0;
+        left: 0;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 200px;
+        line-height: 156px;
+        text-transform: uppercase;
+        color: #ffffff;
+        opacity: 0.07;
+    }
+}
+
+.header__nav {
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 160px;
+    z-index: 3;
+
+    &-logo {
+        margin-top: 165px;
+        white-space: nowrap;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 60px;
+        line-height: 86px;
+        max-height: 280px;
+        color: #fff;
+        text-transform: uppercase;
+        transform: rotate(-90deg);
+
+        span {
+            line-height: 86px;
+            display: inline-block;
+            width: 20px;
+            height: 1px;
+            background: url("../img/nav-dash.png");
+            vertical-align: middle;
+        }
+    }
+    &-rectangle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 190px;
+        background: #4af6cd;
+    }
+    &-list {
+        width: 100%;
+        margin-top: 100px;
+        li {
+            margin-bottom: 15px;
+            a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        i {
+            display: block;
+            width: 60px;
+            height: 50px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        span {
+            margin-top: 5px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 3px;
+            color: #ffffff;
+        }
+        .surf {
+            background-image: url('../img/nav-surf.svg');
+        }
+        .travel {
+            background-image: url('../img/nav-travel.svg');
+        }
+        .sleep {
+            background-image: url('../img/nav-sleep.svg');
+        }
+        .shop {
+            background-image: url('../img/nav-shop.svg');
+        }
+    }
+}
 
 .header__slider {
     &-item {
-        background-image: url('../img/header-bg.jpg');
+        background-image: url("../img/header-bg.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         height: 100vh;
     }
+    &-dots {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        position: absolute;
+        z-index: 5;
+        bottom: 20px;
+        right: 80px;
+        height: 50px;
+
+        .active {
+            border-top: 4px solid #4af6cd;
+        }
+    }
+    &-dot {
+        width: 200px;
+        color: #fff;
+        border-top: 4px solid #fff;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        span:first-child {
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 34px;
+            text-transform: uppercase;
+        }
+        span:nth-child(2) {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+            margin-top: 10px;
+        }
+    }
 }
 
 .slider-item {
     position: relative;
+
+    &__arrow-left,
+    &__arrow-right {
+        position: absolute;
+        top: 40px;
+        right: 80px;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        background: url("../img/header-arrow-right.svg") no-repeat center;
+    }
+    &__arrow-left {
+        right: 125px;
+        transform: rotate(180deg);
+    }
 
     &__info {
         position: absolute;
@@ -41,7 +191,7 @@
             font-weight: 800;
             font-size: 80px;
             line-height: 86px;
-            margin: 5px 0 45px;
+            margin: 5px 0 30px;
         }
 
         &-text {
@@ -56,12 +206,21 @@
                 display: inline-block;
                 width: 25px;
                 height: 25px;
-                background: url('../img/header-arrow-right.svg') no-repeat center;
+                background: url("../img/header-arrow-right.svg") no-repeat center;
             }
         }
     }
 }
+// .owl-dot {
+//     display: inline-block;
+//     position: absolute;
+//     bottom: 20px;
+//     right: 30px;
+//     width: 200px;
+//     height: 50px;
+//     margin: 0 15px;
+//     background: #000 !important;
 
-
+// }
 
 @import "media";
